@@ -1,14 +1,24 @@
+import React, { useState } from "react";
 import {
+  Favorite,
   FavoriteBorderOutlined,
   MoreVert,
+  ThumbUpAlt,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
-import React from "react";
 import "./post.css";
 
 import { Users } from "../../testData";
 
 const Post = ({ post }) => {
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -37,9 +47,25 @@ const Post = ({ post }) => {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <ThumbUpAltOutlined className="likeIcon" />
-            <FavoriteBorderOutlined className="likeIcon" />
-            <span className="postLikeCounter">{post.like} people liked</span>
+            {isLiked ? (
+              <>
+                <ThumbUpAlt className="likeIcon" onClick={likeHandler} />
+                <Favorite className="likeIcon" onClick={likeHandler} />
+              </>
+            ) : (
+              <>
+                <ThumbUpAltOutlined
+                  className="likeIcon"
+                  onClick={likeHandler}
+                />
+
+                <FavoriteBorderOutlined
+                  className="likeIcon"
+                  onClick={likeHandler}
+                />
+              </>
+            )}
+            <span className="postLikeCounter">{like} people liked</span>
           </div>
           <div className="postBottomRight">
             <span className="postCommentText">{post.comment} comments</span>

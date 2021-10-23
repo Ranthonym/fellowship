@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./navbar.css";
 import { Chat, Notifications, Person, Search } from "@material-ui/icons";
 
 const Navbar = () => {

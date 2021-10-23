@@ -1,10 +1,19 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import "./home.css";
+import Feed from "../../components/feed/Feed";
+import Navbar from "../../components/navbar/Navbar";
+import Rightbar from "../../components/rightbar/Rightbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <div className="homeContainer">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </div>
+    </>
   );
 };

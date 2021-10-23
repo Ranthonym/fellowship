@@ -6,7 +6,9 @@ import {
 import React from "react";
 import "./post.css";
 
-const Post = () => {
+import { Users } from "../../testData";
+
+const Post = ({ post }) => {
   return (
     <div className="post">
       <div className="postWrapper">
@@ -14,30 +16,33 @@ const Post = () => {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src="assets/person/norm.jpeg"
+              src={
+                Users.filter((user) => user.id === post.userId)[0]
+                  .profilePicture
+              }
               alt=""
             />
-            <span className="postUsername">Norm</span>
-            <span className="postDate">5 mins ago</span>
+            <span className="postUsername">
+              {Users.filter((user) => user.id === post.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVert />
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">
-            And the moth says, “‘Cause the light was on.”
-          </span>
-          <img src="/assets/person/norm.jpeg" alt="" className="postImg" />
+          <span className="postText">{post?.title}</span>
+          <img src={post.photo} alt="" className="postImg" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
             <ThumbUpAltOutlined className="likeIcon" />
             <FavoriteBorderOutlined className="likeIcon" />
-            <span className="postLikeCounter">24 people liked</span>
+            <span className="postLikeCounter">{post.like} people liked</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">9 comments</span>
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </div>
       </div>

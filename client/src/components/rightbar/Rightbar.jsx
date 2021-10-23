@@ -2,6 +2,9 @@ import React from "react";
 import "./rightbar.css";
 import { CakeOutlined } from "@material-ui/icons";
 
+import { Users } from "../../testData";
+import Online from "../online/Online";
+
 const Rightbar = () => {
   return (
     <div className="rightbar">
@@ -15,28 +18,9 @@ const Rightbar = () => {
         <img src="assets/spicyramen.jpg" alt="" className="rightbarAd" />
         <h4 className="rightbarTitle">Online buddies</h4>
         <ul className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img
-                src="assets/person/norm.jpeg"
-                alt=""
-                className="rightbarProfileImg"
-              />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jean-Luc</span>
-          </li>
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img
-                src="assets/person/norm.jpeg"
-                alt=""
-                className="rightbarProfileImg"
-              />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jean-Luc</span>
-          </li>
+          {Users.map((user) => (
+            <Online key={user.id} user={user} />
+          ))}
         </ul>
       </div>
     </div>

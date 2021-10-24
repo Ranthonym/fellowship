@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
 import Feed from "../../components/feed/Feed";
 import Navbar from "../../components/navbar/Navbar";
 import Rightbar from "../../components/rightbar/Rightbar";
@@ -7,6 +9,16 @@ import "./profile.css";
 
 const Profile = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [user, setUser] = useState({});
+  const username = useParams().username;
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`/users?username=${username}`);
+      setUser(res.data);
+    };
+    fetchUser();
+  }, [username]);
 
   return (
     <>
@@ -17,26 +29,26 @@ const Profile = () => {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src={`${PF}/kaguya1.jpeg`}
+                src={user.coverPicture || `${PF}/kaguya1.jpeg`}
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src={`${PF}/person/norm.jpeg`}
+                src={user.profilePicture || `${PF}/person/norm.jpeg`}
                 alt=""
                 className="profileUserImg"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Norm</h4>
+              <h4 className="profileInfoName">{user.username}</h4>
               <span className="profileInfoDesc">
                 And the moth says, “‘Cause the light was on."
               </span>
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed />
-            <Rightbar profile />
+            <Feed username="dutch" />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>

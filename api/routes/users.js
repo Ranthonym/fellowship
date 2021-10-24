@@ -33,7 +33,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // delete user
-router.delete("/:id", async (req, res) => {
+router.delete("/", async (req, res) => {
   if (req.body.userId === req.params.id || req.body.isAdmin) {
     try {
       const updatedUser = await User.findByIdAndDelete(req.params.id);
@@ -47,9 +47,14 @@ router.delete("/:id", async (req, res) => {
 });
 
 // get user
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
+  const userId = req.query.userId;
+  const username = req.query.username;
+
   try {
-    const user = await User.findById(req.params.id);
+    const user = userId
+      ? await User.findById(userId)
+      : await User.findOne({ username: username });
     // separate encrypted password from user data.
     const { password, updatedAt, ...userData } = user._doc;
     res.status(200).json(userData);

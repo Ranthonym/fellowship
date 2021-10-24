@@ -1,12 +1,15 @@
 import React from "react";
 import "./navbar.css";
 import { Chat, Notifications, Person, Search } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="navbarContainer">
       <div className="navbarLeft">
-        <span className="logo">Fellowship</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Fellowship</span>
+        </Link>
       </div>
       <div className="navbarCenter">
         <div className="searchbar">

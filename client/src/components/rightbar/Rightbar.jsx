@@ -27,6 +27,8 @@ const Rightbar = ({ profile }) => {
   };
 
   const ProfileRightBar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
       <>
         <h4 className="rightbarTitle">user info</h4>
@@ -44,7 +46,7 @@ const Rightbar = ({ profile }) => {
         <div className="rightbarFollowingList">
           <div className="rightbarFollowing">
             <img
-              src="assets/person/norm.jpeg"
+              src={`${PF}/person/norm.jpeg`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -52,7 +54,7 @@ const Rightbar = ({ profile }) => {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person/norm.jpeg"
+              src={`${PF}/person/norm.jpeg`}
               alt=""
               className="rightbarFollowingImg"
             />

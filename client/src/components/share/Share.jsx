@@ -3,13 +3,15 @@ import React from "react";
 import "./share.css";
 
 const Share = () => {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
           <img
             className="shareProfileImg"
-            src="assets/person/norm.jpeg"
+            src={`${PF}/person/norm.jpeg`}
             alt=""
           />
           <input placeholder="Sup?" type="text" className="shareInput" />

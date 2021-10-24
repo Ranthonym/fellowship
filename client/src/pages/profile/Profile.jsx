@@ -6,6 +6,8 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import "./profile.css";
 
 const Profile = () => {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <>
       <Navbar />
@@ -15,12 +17,12 @@ const Profile = () => {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src="assets/kaguya1.jpeg"
+                src={`${PF}/kaguya1.jpeg`}
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src="assets/person/norm.jpeg"
+                src={`${PF}/person/norm.jpeg`}
                 alt=""
                 className="profileUserImg"
               />

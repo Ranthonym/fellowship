@@ -1,52 +1,52 @@
 export const Users = [
   {
     id: 1,
-    profilePicture: "assets/person/norm.jpeg",
-    username: "Norm Macdonald",
+    profilePicture: "person/norm.jpeg",
+    username: "Norm",
   },
   {
     id: 2,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Holden Caulfield",
   },
   {
     id: 3,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Aldous Huxley",
   },
   {
     id: 4,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Dutch Vanderlinde",
   },
   {
     id: 5,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Hosea Matthews",
   },
   {
     id: 6,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Abigail Marston",
   },
   {
     id: 7,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Sadie Adler",
   },
   {
     id: 8,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Tommy Vercetti",
   },
   {
     id: 9,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Booker Dewitt",
   },
   {
     id: 10,
-    profilePicture: "assets/person/norm.jpeg",
+    profilePicture: "person/norm.jpeg",
     username: "Old Man River",
   },
 ];
@@ -55,7 +55,7 @@ export const Posts = [
   {
     id: 1,
     title: "And the moth says, “‘Cause the light was on.”",
-    photo: "assets/howl1.jpeg",
+    photo: "howl1.jpeg",
     date: "5 mins ago",
     userId: 1,
     like: 32,
@@ -63,7 +63,7 @@ export const Posts = [
   },
   {
     id: 2,
-    photo: "assets/arietty1.jpeg",
+    photo: "arietty1.jpeg",
     date: "15 mins ago",
     userId: 2,
     like: 2,
@@ -72,7 +72,7 @@ export const Posts = [
   {
     id: 3,
     title: "Soma is a remedy for the forsaken",
-    photo: "assets/fall.jpeg",
+    photo: "fall.jpeg",
     date: "1 hour ago",
     userId: 3,
     like: 61,
@@ -81,7 +81,7 @@ export const Posts = [
   {
     id: 4,
     title: "The fall of dreams",
-    photo: "assets/kaguya1.jpeg",
+    photo: "kaguya1.jpeg",
     date: "4 hours ago",
     userId: 4,
     like: 7,
@@ -90,7 +90,7 @@ export const Posts = [
   {
     id: 5,
     title: "Dust to blue sky to dust",
-    photo: "assets/space.jpeg",
+    photo: "space.jpeg",
     date: "5 hours ago",
     userId: 5,
     like: 23,
@@ -98,7 +98,7 @@ export const Posts = [
   },
   {
     id: 6,
-    photo: "assets/arietty1.jpeg",
+    photo: "arietty1.jpeg",
     date: "1 day ago",
     userId: 6,
     like: 44,
@@ -107,7 +107,7 @@ export const Posts = [
   {
     id: 7,
     title: "Howling in castles",
-    photo: "assets/howl1.jpeg",
+    photo: "howl1.jpeg",
     date: "2 days ago",
     userId: 7,
     like: 52,
@@ -115,7 +115,7 @@ export const Posts = [
   },
   {
     id: 8,
-    photo: "assets/space.jpeg",
+    photo: "space.jpeg",
     date: "3 days ago",
     userId: 8,
     like: 15,
@@ -124,7 +124,7 @@ export const Posts = [
   {
     id: 9,
     title: "As the Crow flies",
-    photo: "assets/kaguya1.jpeg",
+    photo: "kaguya1.jpeg",
     date: "5 days ago",
     userId: 9,
     like: 11,
@@ -132,7 +132,7 @@ export const Posts = [
   },
   {
     id: 10,
-    photo: "assets/howl1.jpeg",
+    photo: "howl1.jpeg",
     date: "1 week ago",
     userId: 10,
     like: 104,

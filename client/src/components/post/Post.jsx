@@ -13,6 +13,7 @@ import { Users } from "../../testData";
 const Post = ({ post }) => {
   const [like, setLike] = useState(post.like);
   const [isLiked, setIsLiked] = useState(false);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const likeHandler = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -27,6 +28,7 @@ const Post = ({ post }) => {
             <img
               className="postProfileImg"
               src={
+                PF +
                 Users.filter((user) => user.id === post.userId)[0]
                   .profilePicture
               }
@@ -43,7 +45,7 @@ const Post = ({ post }) => {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.title}</span>
-          <img src={post.photo} alt="" className="postImg" />
+          <img src={PF + post.photo} alt="" className="postImg" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
